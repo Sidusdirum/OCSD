@@ -1,0 +1,185 @@
+/* Общие стили */
+QWidget {
+    background-color: @MainBackground;
+    color: @TextPrimary;
+    font-family: "Roboto";
+    font-size: 10pt;
+}
+
+/* === ВЕРХНЯЯ ШАПКА (единая, черная) === */
+#TopNav {
+    background-color: #000000;
+    border-bottom: 1px solid @MainFrameDark;
+}
+
+/* Все дочерние элементы шапки должны быть прозрачными */
+#TopNav QWidget, #TopNav QLabel {
+    background-color: transparent;
+}
+
+#LogoText {
+    font-size: 16pt;
+    font-weight: bold;
+    color: @TextHeader;
+}
+
+#NavText {
+    font-size: 12pt;
+    color: @TextPrimary;
+}
+
+/* === САЙДБАР === */
+#Sidebar {
+    background-color: @WindowBackground;
+    border-right: 1px solid @MainFrameDark;
+}
+
+.SidebarGroup {
+    font-size: 11pt;
+    font-weight: bold;
+    color: @TextSecondary;
+    padding-left: 24px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    background-color: transparent;
+}
+
+QPushButton.SidebarBtn {
+    background-color: transparent;
+    border: none;
+    color: @TextPrimary;
+    text-align: left;
+    font-size: 10pt;
+    padding: 8px 0px 8px 24px;
+}
+
+QPushButton.SidebarBtn:hover {
+    background-color: @MainFrameLight;
+}
+
+QPushButton.SidebarBtn:checked {
+    background-color: @MainFrameLight;
+    border-left: 3px solid @AccentColorBlue;
+    padding-left: 21px; /* 24 - 3 */
+    font-weight: bold;
+}
+
+/* === КОНТЕНТ === */
+#ContentArea {
+    background-color: @MainBackground;
+}
+
+/* === ФОРМЫ === */
+QLineEdit, QComboBox {
+    background-color: @MainFrameDark;
+    border: 1px solid @MainFrameLight;
+    border-radius: 0px;
+    padding: 4px 8px;
+    color: @TextPrimary;
+    min-height: 24px;
+}
+
+QLineEdit:focus, QComboBox:focus {
+    border: 1px solid @AccentColorBlue;
+}
+
+QComboBox QAbstractItemView {
+    background-color: @MainFrameDark;
+    border: 1px solid @MainFrameLight;
+    selection-background-color: @AccentColorBlue;
+    selection-color: white;
+}
+
+/* === КНОПКИ === */
+QPushButton.primary {
+    background-color: @AccentColorBlue;
+    color: white;
+    border: none;
+    border-radius: 0px;
+    padding: 6px 16px;
+    font-weight: bold;
+}
+QPushButton.primary:hover {
+    background-color: @AccentColorBlue_dark;
+}
+
+QPushButton.danger {
+    background-color: @AccentColorRed;
+    color: white;
+    border: none;
+    border-radius: 0px;
+    padding: 6px 16px;
+    font-weight: bold;
+}
+QPushButton.danger:hover {
+    background-color: @AccentColorRed_dark;
+}
+QPushButton.danger:disabled {
+    background-color: @MainFrameLight;
+    color: @TextSecondary;
+}
+
+/* === МОДАЛЬНЫЕ ОКНА === */
+#NewBPCDialog {
+    background-color: @WindowBackground;
+}
+
+#DialogTitle {
+    font-size: 14pt;
+    font-weight: bold;
+    color: @TextHeader;
+    background-color: transparent;
+}
+
+/* Поля внутри диалога должны иметь фон WindowFrameDark */
+#NewBPCDialog QLineEdit, #NewBPCDialog QComboBox {
+    background-color: @WindowFrameDark;
+    border: 1px solid @WindowFrameLight;
+}
+
+/* Заголовки лейблов внутри диалога */
+#NewBPCDialog QLabel {
+    background-color: transparent;
+    color: @TextPrimary;
+}
+
+#EconomyWidget {
+    background-color: @WindowBackground;
+    border: 1px solid @MainFrameLight;
+    border-radius: 4px;
+}
+
+#EconomyWidget QLabel {
+    background-color: transparent;
+}
+
+/* === ДЕРЕВО МАТЕРИАЛОВ === */
+QTreeView {
+    background-color: @MainBackground;
+    alternate-background-color: @MainFrameDark;
+    color: @TextPrimary;
+    border: 1px solid @MainFrameDark;
+    outline: 0;
+}
+
+QTreeView::item {
+    padding: 4px;
+}
+
+QTreeView::item:hover {
+    background-color: @MainFrameLight;
+}
+
+QTreeView::item:selected {
+    background-color: @AccentColorBlue;
+    color: white;
+}
+
+QHeaderView::section {
+    background-color: @WindowBackground;
+    color: @TextSecondary;
+    padding: 4px;
+    border: none;
+    border-bottom: 1px solid @MainFrameDark;
+    font-weight: bold;
+}
